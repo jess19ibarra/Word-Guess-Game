@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Word Guess Game</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="main header">
+        <h1>Cartoons of the 90's</h1>
+    </header>
+
+    <main>
+        <div class="topcontainer">
+            <div class="top">
+                <p id="Play">PRESS ANY ALPHABET KEY TO</p>
+                <h2>GUESS THE 90'S CARTOON!</h2>
+                <p id="answer"></p>
+            </div>
+
+            <div class="btmcontainer">
+                <div class="leftside">
+                    <div class="wins">
+                        <h4>Wins</h4>
+                        <p id="numbWins"></p>
+                    </div>
+                    <div class="losses">
+                        <h4>Losses</h4>
+                        <p id="numbLosses"></p>
+                    </div>
+                </div>
+
+                <div class="rightside">
+                    <h3><span id="numbGuesses"></span>Lives Remaining</h3>
+                    <h3>Letters Guessed</h3>
+                    <p id="ltrsGuessed"></p>
+                </div>
+            </div>
+    </main>
+
+    <script src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>
