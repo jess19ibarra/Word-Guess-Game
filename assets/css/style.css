@@ -5,12 +5,17 @@ body {
     margin: 0 auto;
   }
 
+main {
+    padding: 30px;
+} 
+
 h1 {
     font-size: 75px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: orange;
     text-align: center; 
-    background-color: yellowgreen
+    background-color: yellowgreen;
+    padding: 30px;
 }
 
 p {
@@ -19,14 +24,16 @@ p {
     color: yellowgreen;
     text-align: center;
     background-color: pink;
+    padding: 15px;
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: pink;    
     text-align: center;
     background-color: orange;
+    padding: 30px;
 }
 
 .btmcontainer {
@@ -52,23 +59,18 @@ h2 {
     color: rgb(241, 227, 25);
 }
 
-#Play {
-    color: grey;
-    margin-top: 0;
-    margin-bottom: -40px;
-}
-
 #answer {
     letter-spacing: .25em;
     margin-top: 0;
     color: #d0833b;
 }
 
-.flexColumn {
-    flex-direction: column;
+#img {
+    width: 100%;
+    height: 100%;
 }
 
-#image {
+#img {
     width: 100%;
     height: 100%;
 }

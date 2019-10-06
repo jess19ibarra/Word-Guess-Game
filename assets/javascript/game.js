@@ -1,5 +1,5 @@
 //cartoon list 
-var cartoons = ["ARTHUR", "CATDOG", "DOUG", "ED EDD N EDDY", "HEY ARNOLD", "POWERPUFF GIRLS", "ROCKET POWER", "RUGRATS"];
+var cartoons = ["ARTHUR", "CATDOG", "DOUG", "EDEDDNEDDY", "HEYARNOLD", "POWERPUFFGIRLS", "ROCKETPOWER", "RUGRATS"];
 
 var ltrsGuessed = [];
 var remainingGuesses = 0;
@@ -7,7 +7,7 @@ var maxGuesses = [10];
 var guessedArr = [];
 var numbWins = [0];
 var numbLosses = [0];
-var playword;[0]
+var playword;[]
 var finishedGame = false;
 
 function setup() {
@@ -23,6 +23,7 @@ function setup() {
 
     document.getElementById("numbGuesses").style.color = "";
 
+    document.getElementById("img").innerHTML = "";
     updateScreen();
 };
 
@@ -64,25 +65,25 @@ function isWinner() {
     if (guessedArr.indexOf("_") === -1) {
         numbWins++;
         finishedGame = true;
+        var image = document.createElement("img");
         if (playword === "ARTHUR") {
-            document.createElement("imgage");
             image.setAttribute("src", "https://yt3.ggpht.com/a/AGF-l78gKhVuYTbECV62pahaCW8DxI8PFiQhialzBg=s900-c-k-c0xffffffff-no-rj-mo");
         } else if (playword === "CATDOG") {
-            document.getElementById("image").src = "http://www.toonfind.com/cartoon-images/cartoon-pictures-big/205-4.jpg";
+            image.setAttribute("src", "http://www.toonfind.com/cartoon-images/cartoon-pictures-big/205-4.jpg");
         } else if (playword === "DOUG") {
-            document.getElementById("image").src = "https://ib2.hulu.com/user/v3/artwork/248d614e-04eb-487d-b1d9-8a3c529c355a?base_image_bucket_name=image_manager&base_image=9f057e80-a174-4bba-90d9-f2c34e3fb77f&size=400x600&format=jpeg";
-        } else if (playword === "ED EDD N EDDY") {
-            document.getElementById("image").src = "https://is2-ssl.mzstatic.com/image/thumb/Video/2f/b1/68/mzl.vuhtixam.jpg/268x0w.jpg";
-        } else if (playword === "HEY ARNOLD") {
-            document.getElementById("image").src = "https://ib.hulu.com/user/v3/artwork/a4a06e0c-c4d8-4b34-a55e-a28c57ecc429?base_image_bucket_name=image_manager&base_image=b8f52699-81b5-417b-9c5f-8f7f63528c33&size=400x600&format=jpeg";
-        } else if (playword === "POWERPUFF GIRLS") {
-            document.getElementById("image").src = "https://ib.hulu.com/user/v3/artwork/99bf7a88-78a7-478a-abea-db87ecffafdd?base_image_bucket_name=image_manager&base_image=138a4dc9-3020-4a39-b143-441833f764bc&size=400x600&format=jpeg";
-        } else if (playword === "ROCKET POWER") {
-            document.getElementById("image").src = "https://pbs.twimg.com/media/CKJZfNyVEAACpPn.jpg";
+            image.setAttribute("src", "https://ib2.hulu.com/user/v3/artwork/248d614e-04eb-487d-b1d9-8a3c529c355a?base_image_bucket_name=image_manager&base_image=9f057e80-a174-4bba-90d9-f2c34e3fb77f&size=400x600&format=jpeg");
+        } else if (playword === "EDEDDNEDDY") {
+            image.setAttribute("src", "https://is2-ssl.mzstatic.com/image/thumb/Video/2f/b1/68/mzl.vuhtixam.jpg/268x0w.jpg");
+        } else if (playword === "HEYARNOLD") {
+            image.setAttribute("src", "https://ib.hulu.com/user/v3/artwork/a4a06e0c-c4d8-4b34-a55e-a28c57ecc429?base_image_bucket_name=image_manager&base_image=b8f52699-81b5-417b-9c5f-8f7f63528c33&size=400x600&format=jpeg");
+        } else if (playword === "POWERPUFFGIRLS") {
+            image.setAttribute("src", "https://ib.hulu.com/user/v3/artwork/99bf7a88-78a7-478a-abea-db87ecffafdd?base_image_bucket_name=image_manager&base_image=138a4dc9-3020-4a39-b143-441833f764bc&size=400x600&format=jpeg");
+        } else if (playword === "ROCKETPOWER") {
+            image.setAttribute("src", "https://pbs.twimg.com/media/CKJZfNyVEAACpPn.jpg");
         } else if (playword === "RUGRATS") {
-            document.getElementById("image").src = "https://cdn.onebauer.media/one/lifestyle-legacy/66/fc514/5cb2c/32e0b/c5499/10f8f/dfd14/rugrats-quiz_646x363.jpg?quality=80&width=1800&ratio=16-9&resizeStyle=aspectfill&format=jpg";
+            image.setAttribute("src", "https://cdn.onebauer.media/one/lifestyle-legacy/66/fc514/5cb2c/32e0b/c5499/10f8f/dfd14/rugrats-quiz_646x363.jpg?quality=80&width=1800&ratio=16-9&resizeStyle=aspectfill&format=jpg");
         }
-
+        document.getElementById("img").appendChild(image);
     }
 }
 
@@ -90,8 +91,12 @@ function isLoser() {
     if (remainingGuesses <= 0) {
         numbLosses++;
         finishedGame = true;
-        document.getElementById("image").src = "https://i.ytimg.com/vi/4-Octi0nv50/maxresdefault.jpg";
+        var image = document.createElement("img")
+        image.setAttribute("src", "https://i.ytimg.com/vi/4-Octi0nv50/maxresdefault.jpg");
+
         document.getElementById("numbLosses").style.color = "#e12d2e";
+        document.getElementById("img").appendChild(image).width = '200';
+        document.getElementById("img").appendChild(image).height = '200';
     }
 
 }
@@ -107,6 +112,7 @@ document.onkeyup = function (event) {
             isWinner(playword);
             isLoser(remainingGuesses);
         }
+
     }
 };
 
